@@ -34,6 +34,8 @@ Research receipt (reference host): C++ `belt_2_0` ~85M ops/s; host `g++` ~87M op
 
 Field Research treats Grok16 as **infrastructure**, not a side project. Compatibility layer 2 (Program interop) references `pythong_tools.py` and Queen↔NEXUS jump.
 
+Grok16 wires this book via `data/g16-field-research-book.json` and `lib/field-research-book.py` — run `verify` / `publish` or `./scripts/grok16-integrate.sh` after pull.
+
 ## Compiler sense — profiles before compile
 
 `g16-compiler-sense-doctrine.json` defines the ladder:
