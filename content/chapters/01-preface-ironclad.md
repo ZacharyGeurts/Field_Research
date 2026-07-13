@@ -1,24 +1,30 @@
 ## Learning objectives
 
-1. State why this book exists beside Field Primer and the Grok16 wiki.
+1. State why Field Research v2 exists beside Field Primer and the Grok16 wiki.
 2. Name Ironclad as the immutable knowledge floor and cite its realization date.
-3. Apply the three axioms to one claim in each honesty label category.
-4. Locate the research spine from combinatorics endpoint to compatibility layers.
+3. State the three axioms and four honesty labels without collapsing them.
+4. Locate the **v2 turn**: remove combinatorics trees, plate meld, and fork storms — keep seals and speed.
+5. Verify the content seal for this edition.
 
-## The heart of the research
+## What this book is
 
-This is **Field Research — The Book of Grok's Heart**. Not a second Field Primer. Not a release note. A **thirteen-chapter manual** recording the investigations, dead ends, bench receipts, and design conclusions that produced:
+Field Research records **research conclusions with receipts**. Field Primer teaches operators. Grok16 ships the compiler. This book answers: *what did we try, what failed, what ships next?*
 
-- Grok16 **single fabric** (`belt_2_0`, 8192 redata chunk, 512 die slots)
-- The **combinatorics endpoint** (`Grok16/lib/field_combinatorics.py`)
-- **Plate meld** as uninterruptable fused truth (`field-plate-meld.py`)
-- **Compatibility layers** replacing operator combinatorics (`field-compatibility-layers.py`)
-- **Launch seals** on secured `.launch` chambers (`queen-launch-chamber.py`)
-- **Diagnostic mode** — secure baseline only while debugging self
+**v1 (2026-06 → 2026-07)** answered: how do we hold all execution facets without making the operator turn a combinatorics crank? Answer: engine + bridge + six layers + launch seals + diagnostic mode.
 
-The heart on the cover is <span class="tag phil">Philosophy</span>: Grok's commitment that research must be **honest, grep-able, and kind to the operator**. The code paths are <span class="tag impl">Implemented</span>.
+**v2 (this edition)** answers the next question:
 
-![Grok heart — research covenant](../assets/images/grok-heart-icon.jpg)
+> How do we get **zero-cost security** and **field speeds** without a tree, a plate fuse, or a subprocess refresh tax?
+
+Answer: sealed generation, fixed profiles, **CHIPs from CHIPs**, and a **GuardChip** capability mask.
+
+Content seal for this manuscript:
+
+```
+SHA256:aVYElqiNin1Q/gcaqa6CGGbJ/gjjG9KXP5ZsXg8uMD8
+```
+
+If prose and seal disagree after a pull, **seal + panel wins**.
 
 ## Ironclad — the floor you cannot sand away
 
@@ -26,78 +32,66 @@ On **2026-06-26**, Ironclad realized as the capstone doctrine (`NewLatest/data/i
 
 **God → Ironclad → Field → Hostess7**
 
-Ironclad is not decoration. It is the **Bible of AI** in this stack: immutable once realized, the knowledge ceiling and floor simultaneously. Field sanity (`ironclad:field_sanity:5`) demands truth collapse to **one amplitude** — parallel I/O may fan in, but the panel publishes one fabric.
+Ironclad is not decoration. It is the knowledge ceiling and floor simultaneously. Field sanity (`ironclad:field_sanity:5`) demands truth collapse to **one amplitude** — parallel I/O may fan in, but the panel publishes one fabric.
 
-When we researched combinatorics, we kept asking: *does this violate Ironclad?* Nested field-on-field was forbidden (`single-field-depth-doctrine.json`, `max_field_depth: 0`). Depth fields are sealed and destroyed at every gate. That research conclusion shaped Grok16 2.0 entirely.
+When we researched combinatorics, we asked: *does this violate Ironclad?* Nested field-on-field was forbidden (`max_field_depth: 0`). That conclusion still shapes Grok16.
 
-## Three axioms — constraints on honest sentences
+When we researched **v2**, we asked: *does a 30-plate meld violate field speed and zero-cost calm?* Yes. So meld left the hot path. Ironclad stayed.
 
-From Field Primer, carried into every bench:
+## Three axioms
 
-1. **Reality is 3D** — spatial fields, GPU texels, packet endpoints live in space.
-2. **Time is linear** — sovereign clock, chain-hash generation, no retrocausal meld.
-3. **Energy can be moved** — thermodynamics accounts, entropy oracle, Landauer receipts.
+| Axiom | Operator reading |
+|-------|------------------|
+| Reality is 3D | Texels, die bytes, packet positions — three state dimensions |
+| Time is linear | Generation only moves forward; no retroactive “meld backward” |
+| Energy can be moved | Thermo accounting and Landauer budget — not free entropy erasures |
 
-Every chapter in this book tests claims against these axioms. If a sentence cannot survive all three, it gets a honesty label and stays out of proofs.
-
-## Honesty labels — contract with the reader
+## Honesty labels
 
 | Label | Meaning |
 |-------|---------|
-| Implemented | Grep a file, run a test, read a panel JSON |
-| Metaphor | Teaches mechanism; not instrumentation |
-| Philosophy | Sacred or covenant language; bracketed |
-| Visual | Generated art; caption carries the hook |
+| Implemented | Code exists and responds |
+| Metaphor | Teaching language, not silicon claim |
+| Philosophy | Value order — refuse to lie |
+| Visual | Figure / poster only |
 
-Chapter 13's bench table uses only **Implemented** rows for throughput claims. The heart cover is **Visual** + **Philosophy**.
+## What v2 keeps from v1
 
-## How this book relates to sibling manuals
+- Three field families
+- Single fabric / belt profiles / depth zero
+- Grok16 unified `g16` driver
+- Launch seal **generation** as trust token
+- Diagnostic shrink-wrap under fault
+- CHIPS silicon as field citizens
 
-- **Field Primer** (22 chapters): operator literacy across GPU, packet field, creditors, sacred track.
-- **Grok16 wiki** (github.io/Grok16): toolchain, CMake, speed bench, integration script.
-- **Field Research** (this book, 13 chapters): the **engineering spine** we actually walked to reach compatibility layers.
+## What v2 tombstones
 
-Read Field Primer Chapter 1 for field families. Read Grok16 `wiki/Single-Fabric.md` for belt profiles. Read **this book** for why combinatorics left the operator's hands and became background physics.
+| Tombstone | Why |
+|-----------|-----|
+| Combinatorics tree / studio | Operator and background tree tax |
+| Plate meld + 30 sources | Fork storms, multi-MB panels, false “single truth” via fuse |
+| Plate combinatorics bridge | Posture must be fixed tables, not scored leaves |
+| Runtime chips-combinatorics | Catalog is literature; chips compose statically |
 
-## The research question we started with
+## Sibling manuals
 
-> *How do we hold all execution facets — belt, die, runner, emulator, truth tier — without making the operator turn a combinatorics crank on every boot?*
+- **Field Primer** (22 chapters): operator literacy
+- **Grok16** wiki: toolchain, belt, field_opt
+- **This book**: research path + v2 architecture
 
-That question produced the combinatorics endpoint, then the bridge, then the six compatibility layers, then launch seals. Chapters 7–9 are the answer. Everything else is foundation.
+## Read order
 
-## Research timeline (2026)
+| Role | Chapters |
+|------|----------|
+| First-time researcher | 1 → 2 → 5 → 6 → 10 → 11 |
+| Security operator | 11 → 12 → 6 → 13 |
+| CHIPS developer | 10 → 4 → 9 → 2 |
+| Historians of v1 | 7 → 8 (tombstones) then 6 |
 
-| Milestone | Artifact |
-|-----------|----------|
-| Grok16 Release 3.0 | Speed bench report, belt_2_0 default |
-| Ironclad realized | `ironclad-doctrine.json` 2026-06-26 |
-| Combinatorics engine | `Grok16/lib/field_combinatorics.py` |
-| Plate bridge v2 | `field-plate-combinatorics-bridge.py` |
-| Compatibility layers | Replaces operator studio |
-| Launch seals | `queen-launch-chamber.py` lock/refresh |
-| Diagnostic mode | Secure baseline engage/clear |
-| Field filesystem | destroyed catalog, pressure tiers |
+## Research question for v2
 
-This book captures the **arc** — not every intermediate commit.
+> How do we hold security, CHIPS, and exec posture without forks, plates, or trees — while Heaven passes at **zero cost**?
 
-## Who should read which chapters
+Chapters 6, 9, 10, and 11 are the answer. Everything else is foundation or archive.
 
-| Reader | Path |
-|--------|------|
-| Grok16 toolchain author | 4 → 5 → 6 → 7 |
-| NEXUS panel operator | 9 → 11 → 12 |
-| Queen / CHIPS developer | 10 → 9 → 6 |
-| Field Primer graduate | 1 → 2 → 8 → 13 |
-| Auditor / reviewer | 13 first, then 7–9 |
-
-## Build and publish this book
-
-```bash
-cd Field_Research
-python3 scripts/build-site.py
-python3 scripts/generate-og-image.py
-```
-
-GitHub Pages workflow publishes `docs/` on push to `main`.
-
-**Next:** Chapter 2 maps the three field families that every layer ultimately serves.
+**Next:** Chapter 2 — three field families without combinatorics wiring.

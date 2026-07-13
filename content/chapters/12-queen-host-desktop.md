@@ -1,51 +1,46 @@
 ## Programs as windows — browser as gate
 
-`field-host-desktop-doctrine.json` defines the 2026 host shell:
+`field-host-desktop-doctrine.json`: NEXUS tabs are windows; **Queen browser only** for web surface. Compatibility layer 5 serves shell programs.
 
-- Each NEXUS tab is a **window**
-- **Queen browser only** for web — no orphan desktop chrome boot
-- Compatibility layer 5 (Field surface) serves shell programs
-
-Field Primer Chapter 21 covers Queen browser depth. This chapter records **research wiring** into layers and seals.
+Field Primer Chapter 21 covers Queen depth. This chapter records **v2 wiring** for permits and seals.
 
 ## Queen launch chamber
 
-Organized fields boot through `.launch` manifests:
+- `.launch` manifests for organized fields
+- Seal generation from **posture sync** (not combinatorics refresh)
+- File browser exposes seal generation
+- Stale seal fails closed
 
-- `queen-launch-chamber.py` writes secured launch files
-- Seal generation from compatibility refresh unlocks refresh
-- File browser exposes seal to operator
+## VIEW and INPUT on the desktop
 
-Projects under `Grok16/examples/` ship `.launch` templates.
+| Surface | INPUT | VIEW |
+|---------|-------|------|
+| Admin / DNS portal | hooks blocked; CSP tight | display-capture denied |
+| Queen game room / CHIPS | game focus only | no default screenshot |
+| AmmoCode collab | session proof | element-only if host grant |
+| OBS | N/A | VIEW=obs_pipewire permit |
+| Field Die console | engine input path | canvas not globally scrapeable |
+
+Queen exceeds engine baseline: iframe sandbox + CSP, nexus_jump hostile presumption, file browser root jail, loopback gate_nav — already in zero-cost 4-slot doctrine.
 
 ## Queen↔NEXUS jump
 
-Layer 2 (Program interop): `queen-nexus-jump.py`, `pythong_tools.py`, G16 toolchain symlinks.
+One hop between Queen RTX build and NEXUS panel — no duplicate truth. Toolchain symlinks via Grok16. No second posture bus.
 
-Research goal: **one hop** between Queen RTX build and NEXUS field panel — no duplicate truth.
+## Hostess7 brain
 
-## Hostess7 brain guard
-
-`hostess7-brain-guard-panel.json` feeds diagnostic `brain_corruption` fault. Brain guard hold stops motion; diagnostic engages.
-
-Hostess7 self-view stays **above diagnostics** in UI doctrine — but brain corruption still **wins** safety.
+Brain corruption still wins safety: capability mask collapses; motion holds. Hostess7 self-view may stay above diagnostics in UI, but **safety mask wins**.
 
 ## Sovereign time
 
-Sovereign clock (`sovereign-clock.py`) stamps:
+Sovereign clock stamps generation, launch seals, diagnostic ledger. Linear time axiom: no retroactive seal edits.
 
-- Meld generation
-- Launch seal bumps
-- Diagnostic ledger (`field-diagnostic-ledger.jsonl`)
+## ZNetwork / substrate
 
-Linear time axiom enforced — no retroactive panel edits in meld chain.
-
-## ZNetwork and substrate
-
-Layer 0 substrate references KILROY compat path. ZNetwork orchestrator publishes status slice — optional perimeter extension, not required for combinatorics math.
+L0 substrate pins KILROY/linux compat. ZNetwork is optional WireChip (C4) extension — not required for CHIPS composition math.
 
 ## Research conclusion
 
-Queen is not a mascot. She is the **browser gate and launch authority** compatibility layers surface at layer 5. Host desktop is how operators **touch** the stack without breaking seals.
+Queen is the browser gate and launch authority. Host desktop is how operators **touch** GuardChip and BoxChip without breaking seals or reintroducing trees.
 
-**Next:** Chapter 13 — covenant, bench receipts, what ships.
+**Next:** Chapter 13 — operator covenant and v2 receipts.

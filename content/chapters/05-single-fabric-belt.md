@@ -1,10 +1,10 @@
 ## One belt die. One field amplitude.
 
-`grok16-single-fabric-doctrine.json` declares Grok16 2.0:
+`grok16-single-fabric-doctrine.json` declares:
 
 > Parallel I/O may fan in, but truth collapses to one amplitude on one belt.
 
-This is not poetry. It is the **research antidote** to field-on-field stacks that made panels disagree.
+This is the research antidote to field-on-field stacks that made panels disagree. **v2 does not reopen depth.**
 
 ## belt_2_0 parameters
 
@@ -16,40 +16,28 @@ This is not poetry. It is the **research antidote** to field-on-field stacks tha
 | `die_slots` | 512 |
 | `profile` | belt_2_0 |
 
-Compare `belt_1_0`: 256 die slots — baseline triad compare in bench harness.
+`belt_1_0`: 256 die slots — baseline compare in triad benches.
 
 ## Depth zero — creation forbidden
 
-`nexus_safety_ref` → `single-field-depth-doctrine.json`:
-
 - `max_field_depth: 0`
-- `depth_fields_sealed_and_destroyed: true`
-- `creation_forbidden: true`
+- depth fields sealed and destroyed at gates
+- `creation_forbidden: true` for nested field-on-field
 
-`field-depth-singularizer.py` enforces at gates. Ironclad citation: `ironclad:field_sanity:5`.
-
-Research sessions that proposed "nested field plates" ended here. Combinatorics spatial facet uses scale nets (`body`, `room`, `field`, `planetary`) but **no deeper field-on-field**.
-
-## Knowing as fixed-size dispatch
-
-Single fabric knowing means: operator truth is **one fabric amplitude**, not a stack of nested depth layers. Chunked redata belt + single-location reads avoid monolithic blast without violating depth zero.
+Scale nets (`body`, `room`, `field`, `planetary`) are **spatial literacy**, not stacked field amplitudes.
 
 ## Linear time
 
-`time_citation: ironclad:time:1`. Sovereign clock stamps every panel, meld generation, launch seal bump. Meld chain-hash is monotonic generation — you cannot meld "backward."
+`time_citation: ironclad:time:1`. Sovereign clock stamps sealed generation and launch seal bumps. Generation is monotonic — you cannot seal “backward.”
 
-## Validation batteries
+v1 stamped meld chain-hash the same way. v2 stamps **one posture file**, not thirty plate mirrors.
 
-```bash
-# Grok16 root
-./scripts/test-battery-belt
-./scripts/test-battery-release
-```
+## Why single fabric survives the tombstones
 
-Bench JSON: `docs/field-exec-full-bench.json`, mirrored under `data/bench/exec-plane/`.
+Removing combinatorics and meld does **not** remove single fabric. Those mechanisms *served* single fabric poorly (refresh storms, stale multi-panel drift). Fixed profiles + sealed generation serve it better.
 
 ## Research conclusion
 
-Single fabric is the **physics** compatibility layer 1 (Exec/BSP) assumes. Combinatorics estimates speed cap from belt profile × runner × truth tier. If fabric were nested, the endpoint math would lie.
+Single fabric is physics. Belt is the die layout. Depth zero is law. Trees and fuses were scaffolding — now removed from the hot path.
 
-**Next:** Chapter 6 — iron plate, truth blocks, and why dev stays uncompiled.
+**Next:** Chapter 6 — sealed generation replaces plates.

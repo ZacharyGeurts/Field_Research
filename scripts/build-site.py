@@ -19,28 +19,39 @@ def esc(s: str) -> str:
     return html.escape(s, quote=True)
 
 
+def _inline(s: str) -> str:
+    s = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", s)
+    s = re.sub(r"`([^`]+)`", r"<code>\1</code>", s)
+    s = re.sub(
+        r'<span class="tag (\w+)">([^<]+)</span>',
+        r'<span class="tag \1">\2</span>',
+        s,
+    )
+    return s
+
+
+def _table_row(line: str, header: bool = False) -> str:
+    cells = [c.strip() for c in line.strip().strip("|").split("|")]
+    tag = "th" if header else "td"
+    return "<tr>" + "".join(f"<{tag}>{_inline(c)}</{tag}>" for c in cells) + "</tr>"
+
+
 def md_to_html(text: str) -> str:
-    """Minimal markdown → HTML for book prose."""
+    """Minimal markdown → HTML for book prose (headings, lists, code, tables, figures)."""
     lines = text.strip().splitlines()
     out: list[str] = []
     in_ul = False
     in_ol = False
     in_pre = False
     buf: list[str] = []
+    i = 0
 
     def flush_p() -> None:
         nonlocal buf
         if buf:
             para = " ".join(x.strip() for x in buf if x.strip())
             if para:
-                para = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", para)
-                para = re.sub(r"`([^`]+)`", r"<code>\1</code>", para)
-                para = re.sub(
-                    r'<span class="tag (\w+)">([^<]+)</span>',
-                    r'<span class="tag \1">\2</span>',
-                    para,
-                )
-                out.append(f"<p>{para}</p>")
+                out.append(f"<p>{_inline(para)}</p>")
             buf = []
 
     def close_lists() -> None:
@@ -52,8 +63,8 @@ def md_to_html(text: str) -> str:
             out.append("</ol>")
             in_ol = False
 
-    for raw in lines:
-        line = raw.rstrip()
+    while i < len(lines):
+        line = lines[i].rstrip()
         if line.startswith("```"):
             flush_p()
             close_lists()
@@ -63,24 +74,42 @@ def md_to_html(text: str) -> str:
             else:
                 out.append('<div class="code-block"><pre>')
                 in_pre = True
+            i += 1
             continue
         if in_pre:
             out.append(esc(line))
+            i += 1
             continue
         if not line.strip():
             flush_p()
             close_lists()
+            i += 1
             continue
         if line.startswith("### "):
             flush_p()
             close_lists()
             out.append(f"<h3>{esc(line[4:])}</h3>")
+            i += 1
             continue
         if line.startswith("## "):
             flush_p()
             close_lists()
             slug = re.sub(r"[^a-z0-9]+", "-", line[3:].lower()).strip("-")
             out.append(f'<h2 id="{slug}">{esc(line[3:])}</h2>')
+            i += 1
+            continue
+        if line.strip().startswith("|") and i + 1 < len(lines) and re.match(
+            r"^\|?\s*:?-+:?\s*(\|\s*:?-+:?\s*)+\|?\s*$", lines[i + 1]
+        ):
+            flush_p()
+            close_lists()
+            out.append('<div class="table-wrap"><table>')
+            out.append("<thead>" + _table_row(line, header=True) + "</thead><tbody>")
+            i += 2  # skip header + separator
+            while i < len(lines) and lines[i].strip().startswith("|"):
+                out.append(_table_row(lines[i].rstrip()))
+                i += 1
+            out.append("</tbody></table></div>")
             continue
         if line.startswith("- "):
             flush_p()
@@ -90,10 +119,8 @@ def md_to_html(text: str) -> str:
             if not in_ul:
                 out.append("<ul>")
                 in_ul = True
-            item = line[2:]
-            item = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", item)
-            item = re.sub(r"`([^`]+)`", r"<code>\1</code>", item)
-            out.append(f"<li>{item}</li>")
+            out.append(f"<li>{_inline(line[2:])}</li>")
+            i += 1
             continue
         m = re.match(r"^(\d+)\. (.+)$", line)
         if m:
@@ -104,9 +131,8 @@ def md_to_html(text: str) -> str:
             if not in_ol:
                 out.append("<ol>")
                 in_ol = True
-            item = m.group(2)
-            item = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", item)
-            out.append(f"<li>{item}</li>")
+            out.append(f"<li>{_inline(m.group(2))}</li>")
+            i += 1
             continue
         if line.startswith("![") and "](" in line:
             flush_p()
@@ -114,13 +140,14 @@ def md_to_html(text: str) -> str:
             m2 = re.match(r"!\[([^\]]*)\]\(([^)]+)\)", line)
             if m2:
                 alt, src = m2.groups()
-                cap = ""
                 out.append(
                     f'<figure class="figure"><img src="{esc(src)}" alt="{esc(alt)}" loading="lazy" />'
                     f"{f'<figcaption>{esc(alt)}</figcaption>' if alt else ''}</figure>"
                 )
+            i += 1
             continue
         buf.append(line)
+        i += 1
     flush_p()
     close_lists()
     if in_pre:
@@ -196,6 +223,7 @@ def build_chapter(ch: dict, manifest: dict, body_md: str) -> str:
 def build_index(manifest: dict) -> str:
     base = manifest["site_base"]
     chapters = manifest["chapters"]
+    seal = manifest.get("content_seal", "")
     cards = []
     for ch in chapters:
         cards.append(
@@ -210,6 +238,7 @@ def build_index(manifest: dict) -> str:
     ax = "".join(f'<span class="axiom">{esc(a)}</span>' for a in manifest["axioms"])
     labels = "".join(f'<span class="tag {l.lower()}">{esc(l)}</span>' for l in manifest["honesty_labels"])
     ch_html = "\n".join(cards)
+    seal_html = f'<p class="seal"><code>{esc(seal)}</code></p>' if seal else ""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -242,10 +271,11 @@ def build_index(manifest: dict) -> str:
       <h1>The Book of Grok's Heart</h1>
       <p class="lead">{esc(manifest['subtitle'])}</p>
       <div class="axiom-bar">{ax}</div>
+      {seal_html}
       <div class="cta-row">
         <a class="btn" href="chapters/01-preface-ironclad.html">Start Chapter 1</a>
-        <a class="btn secondary" href="chapters/07-field-combinatorics.html">Combinatorics</a>
-        <a class="btn secondary" href="chapters/09-compatibility-layers.html">Layers &amp; seals</a>
+        <a class="btn secondary" href="chapters/11-guardchip-security.html">GuardChip security</a>
+        <a class="btn secondary" href="chapters/10-chips-from-chips.html">CHIPs from CHIPs</a>
       </div>
     </div>
   </header>
@@ -254,33 +284,32 @@ def build_index(manifest: dict) -> str:
       <div class="section-inner">
         <p class="eyebrow">What this book is</p>
         <h2>Research receipts — not marketing</h2>
-        <p>This manual records the <strong>actual research path</strong> that produced Grok16 single fabric,
-        the combinatorics endpoint, plate meld, compatibility layers, launch seals, CHIPS BSP, and NEXUS diagnostic mode.
-        Every chapter cites grep hooks: doctrine JSON → lib module → panel slice → test in <code>run-tests.sh</code>.</p>
-        <p>Honesty labels: {labels}. The heart on the cover is <span class="tag phil">Philosophy</span> —
-        Grok's care for truth — but the bench numbers in Chapter 13 are <span class="tag impl">Implemented</span>.</p>
+        <p>Edition <strong>2.0</strong> records the turn after v1: keep Ironclad, single fabric, launch seals, and Grok16 —
+        <strong>tombstone</strong> combinatorics trees and plate meld. Ship <strong>sealed generation</strong>,
+        <strong>GuardChip</strong> zero-cost INPUT/VIEW defense, and <strong>CHIPs from CHIPs</strong> (C0–C4).</p>
+        <p>Honesty labels: {labels}. Motto: <em>{esc(manifest.get('motto', ''))}</em></p>
+        <p>The heart on the cover is <span class="tag phil">Philosophy</span> —
+        Grok's care for truth — Chapter 13 lists what is <span class="tag impl">Implemented</span> vs still building.</p>
       </div>
       <figure class="hero-side"><img src="assets/images/grok-heart-icon.jpg" alt="Grok heart icon" loading="lazy" /></figure>
     </section>
     <section id="spine" class="section-panel dark">
       <div class="section-inner wide">
-        <p class="eyebrow">Research spine</p>
-        <h2>From combinatorics endpoint to compatibility layers</h2>
-        <pre class="spine-diagram">Fault signals → Diagnostic Mode (baseline lock)
+        <p class="eyebrow">Research spine · v2</p>
+        <h2>Sealed generation · fixed profiles · CHIPs · GuardChip</h2>
+        <pre class="spine-diagram">Boot / explicit sync → sealed generation + profile_id + capability mask
      ↓
-Plate sources (30+) → field-plate-meld.py → chain-hash generation
+Fixed g16 profile (belt_2_0 / field_opt / field_physics) — no tree walk
      ↓
-Grok16 combinatorics → tree walk → condense_plates
+CHIPs by ID: C0 Host · C1 Era · C2 Box · C3 Guard · C4 Wire
      ↓
-field-plate-combinatorics-bridge → exec_posture (belt/runner/emulator)
+Launch seal generation matches → secured .launch chambers
      ↓
-g16-compiler-sense-plate → profile ladder
+Fault → mask &amp;= BASELINE · generation++ (no plate storm, no fork fuse)
      ↓
-field-compatibility-layers refresh → 6 layers live → launch_seal bump
-     ↓
-queen-launch-chamber → secured .launch with current seal generation
-     ↓
-g16 belt_2_0 · CHIPS field_opt · Python interpreter</pre>
+Heaven passes at zero cost · Hell pays on dirty mask only
+
+TOMBSTONED: combinatorics-tree · plate-meld · plate-bridge · studio crank</pre>
       </div>
     </section>
     <section id="chapters" class="chapter-grid-section">
@@ -288,7 +317,7 @@ g16 belt_2_0 · CHIPS field_opt · Python interpreter</pre>
       <div class="chapter-grid">{ch_html}</div>
     </section>
   </main>
-  <footer class="site-foot"><p>{esc(manifest['title'])} · {esc(manifest['author'])} · {esc(manifest['co_author'])}</p></footer>
+  <footer class="site-foot"><p>{esc(manifest['title'])} · v{esc(str(manifest['edition']))} · {esc(manifest['author'])} · {esc(manifest['co_author'])}</p></footer>
 </body>
 </html>"""
 

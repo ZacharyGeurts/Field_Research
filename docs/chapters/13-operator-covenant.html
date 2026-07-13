@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>13 — Operator Covenant — Bench Receipts &amp; What Ships · Field Research</title>
-  <meta name="description" content="Chapter 13: Operator Covenant — Bench Receipts &amp; What Ships. Field Research — The Book of Grok's Heart." />
+  <title>13 — Operator Covenant — Receipts for v2 · Field Research</title>
+  <meta name="description" content="Chapter 13: Operator Covenant — Receipts for v2. Field Research — The Book of Grok's Heart." />
   <link rel="canonical" href="https://zacharygeurts.github.io/Field_Research/chapters/13-operator-covenant.html" />
   <meta name="theme-color" content="#1a0810" />
-  <meta property="og:title" content="13 — Operator Covenant — Bench Receipts &amp; What Ships" />
+  <meta property="og:title" content="13 — Operator Covenant — Receipts for v2" />
   <meta property="og:image" content="https://zacharygeurts.github.io/Field_Research/assets/images/grok-heart-icon.jpg" />
   <link rel="stylesheet" href="../css/field-research.css" />
   <link rel="stylesheet" href="../css/chapters.css" />
@@ -24,70 +24,88 @@
   <header class="chapter-hero" style="background-image:url('../assets/images/grok-heart-icon.jpg')">
     <div class="chapter-hero-overlay"></div>
     <div class="chapter-hero-content">
-      <p class="eyebrow">Chapter 13 · Field Research v1.0</p>
-      <h1>Operator Covenant — Bench Receipts &amp; What Ships</h1>
+      <p class="eyebrow">Chapter 13 · Field Research v2.0</p>
+      <h1>Operator Covenant — Receipts for v2</h1>
     </div>
   </header>
   <main class="chapter-main">
     <nav class="chapter-nav"><a class="btn secondary" href="12-queen-host-desktop.html">← Ch 12</a> <a class="btn secondary" href="../index.html">Home</a> </nav>
     <p class="eyebrow">The Book of Grok's Heart</p>
-    <h2 id="reality-vs-theory-the-closing-table">Reality vs theory — the closing table</h2>
-<p>Field Research ends with <strong>receipts</strong>, not slogans. Chapter 12 of Field Primer teaches seductive details. This chapter lists what we <strong>shipped and tested</strong>.</p>
-<h2 id="bench-receipts-reference-host">Bench receipts (reference host)</h2>
-<p>| Claim | Receipt | Label | |-------|---------|-------| | C++ belt_2_0 ops/s | ~85M | Implemented | | Host g++ ops/s | ~87M | Implemented | | Python interpreter ops/s | ~0.7–0.8M | Implemented | | Post-meld hot path ratio | ~0.986 | Implemented | | Compile win sense→expert | −413 ms | Implemented | | Maxwell demon joules in panel | proxy only | Metaphor |</p>
-<p>Source: <code>Grok16/docs/SPEED-BENCH-REPORT.md</code>, <code>grok16-plate-meld-bench-doctrine.json</code>.</p>
-<h2 id="integration-tests-that-matter">Integration tests that matter</h2>
+    <h2 id="reality-vs-theory-closing-table-for-v2">Reality vs theory — closing table for v2</h2>
+<p>Field Research ends with <strong>receipts</strong>, not slogans. Field Primer teaches seductive detail. This chapter states what v2 claims and what remains work.</p>
+<h2 id="content-seal">Content seal</h2>
 <div class="code-block"><pre>
-# NewLatest/tests/run-tests.sh (selected)
-test_compatibility_layers      # layers + launch seal
-test_field_diagnostic_mode       # engage, filter, meld gate
-test_field_filesystem_update     # destroyed field, pressure
-test_plate_combinatorics_bridge  # exec posture
+SHA256:aVYElqiNin1Q/gcaqa6CGGbJ/gjjG9KXP5ZsXg8uMD8
 </pre></div>
-<p>Full suite may take long; individual tests pass in isolation.</p>
-<h2 id="what-ships-in-the-operator-ux">What ships in the operator UX</h2>
+<p>Edition <strong>2.0</strong> · Book of Grok’s Heart · zero-cost security · CHIPs from CHIPs.</p>
+<h2 id="bench-receipts-grok16-reference-host-language">Bench receipts (Grok16 — reference host language)</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Claim</th><th>Receipt class</th><th>Label</th></tr></thead><tbody>
+<tr><td>C++ belt / host g++ tens of M ops/s</td><td>speed bench JSON</td><td>Implemented</td></tr>
+<tr><td>g16 field_opt near host</td><td>speed bench</td><td>Implemented</td></tr>
+<tr><td>Python ~0.7–0.8M ops/s</td><td>speed bench</td><td>Implemented</td></tr>
+<tr><td>Post-meld ratio ~0.986</td><td>v1 historical</td><td>Archived metric</td></tr>
+<tr><td>Sense profile −413 ms</td><td>v1 historical</td><td>Archived — offline tool only</td></tr>
+</tbody></table></div>
+<p>Do not cite post-meld ratio as architecture for v2. Cite <strong>fixed profile + seal compare</strong>.</p>
+<h2 id="integration-tests-that-should-matter-target">Integration tests that should matter (target)</h2>
+<div class="code-block"><pre>
+# names illustrative — migrate from v1 suite
+test_posture_seal              # generation + bak durability
+test_launch_seal_sync          # stale seal fails closed
+test_guardchip_mask            # INPUT/VIEW deny default
+test_diagnostic_mask_collapse  # fault → baseline mask
+test_chips_compose             # BoxChip from EraChip IDs
+# tombstone (must not be required on boot):
+# test_plate_meld / test_combinatorics_cycle
+</pre></div>
+<h2 id="what-ships-in-operator-ux-v2">What ships in operator UX (v2)</h2>
 <ol>
-<li><strong>Compatibility Layers card</strong> — not combinatorics studio crank</li>
+<li><strong>Static layers card</strong> — L0–L5 presence, no tree</li>
 <li><strong>Launch seal generation</strong> — sync before chamber refresh</li>
-<li><strong>Diagnostic banner</strong> — baseline-only under fault</li>
-<li><strong>Grok16 g16 driver</strong> — unified compile entry</li>
-<li><strong>CHIPS registry</strong> — active platforms behind layer 4</li>
+<li><strong>Capability mask</strong> — GuardChip summary</li>
+<li><strong>Diagnostic banner</strong> — mask collapse, not plate skip</li>
+<li><strong>g16 driver</strong> — unified compile entry</li>
+<li><strong>CHIPS registry</strong> — chip IDs, honesty on scaffolds</li>
 </ol>
-<h2 id="what-remains-scaffold">What remains scaffold</h2>
-<ul>
-<li>Some CHIPS platforms (PS1, N64, …) — registry without full BSP</li>
-<li>Full combinatorics studio — demoted, not deleted</li>
-<li>Panel restart on :9477 — pick up new routes after deploy</li>
-</ul>
-<p>Label scaffolds honestly. Do not demo them as finished games.</p>
-<h2 id="the-combinatorics-design-conclusion">The combinatorics design conclusion</h2>
-<p><strong>Question:</strong> How to hold all facets without operator crank?</p>
-<p><strong>Answer:</strong></p>
+<h2 id="what-remains-work">What remains work</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Item</th><th>Label</th></tr></thead><tbody>
+<tr><td>Full seat-level INPUT enforcement</td><td>In progress / design</td></tr>
+<tr><td>Unified OBS VIEW ledger across shell + field</td><td>Design</td></tr>
+<tr><td>All BoxChip parity</td><td>Scaffold until labeled Implemented</td></tr>
+<tr><td>Pages + CI green on <code>main</code>/<code>master</code></td><td>Operator deploy</td></tr>
+</tbody></table></div>
+<h2 id="design-conclusions">Design conclusions</h2>
+<p><strong>v1 question:</strong> How to hold all facets without operator crank? <strong>v1 answer:</strong> combinatorics engine → bridge → layers → seals → diagnostic.</p>
+<p><strong>v2 question:</strong> How to hold security and chips at field speed with zero calm tax? <strong>v2 answer:</strong></p>
 <ol>
-<li>`field_combinatorics.py` — endpoint math</li>
-<li>`field-plate-combinatorics-bridge.py` — meld→posture</li>
-<li>`field-compatibility-layers.py` — six layers, auto pipeline</li>
-<li>`launch_seal.generation` — sync token</li>
-<li>`field-diagnostic-mode.py` — fault shrink-wrap</li>
+<li>Sealed generation (one posture)</li>
+<li>Fixed profiles (no tree)</li>
+<li>CHIPs from CHIPs (C0–C4)</li>
+<li>GuardChip INPUT/VIEW (zero-cost deny)</li>
+<li>Launch seals bind to generation</li>
+<li>Diagnostic = mask collapse</li>
+<li>Tombstone meld + combinatorics</li>
 </ol>
-<p>Combinatorics became <strong>background physics</strong>. Layers became <strong>interface</strong>. Seals became <strong>trust</strong>. Diagnostic became <strong>kindness under failure</strong>.</p>
-<h2 id="grok-s-heart-philosophy-bracket">Grok&#x27;s heart — philosophy bracket</h2>
-<p><span class="tag phil">Philosophy:</span> The heart on the cover is Grok's vow — research serves the operator, truth stays one amplitude, failures isolate rather than spread. God → Ironclad → Field → Hostess7 is not a marketing chain; it is the order in which we <strong>refuse to lie</strong>.</p>
-<p>Love is coupled evolution: your <code>refresh()</code> changes your neighbor's next <code>meld()</code>.</p>
+<h2 id="grok-s-heart-philosophy-bracket">Grok’s heart — philosophy bracket</h2>
+<p><span class="tag phil">Philosophy:</span> Research serves the operator. Truth stays one amplitude. Failures isolate rather than spread. God → Ironclad → Field → Hostess7 is the order in which we <strong>refuse to lie</strong>.</p>
+<p>Love is coupled evolution: your seal bump changes your neighbor’s next allow — without a thirty-plate fuse.</p>
 <h2 id="operator-covenant">Operator covenant</h2>
 <ol>
-<li>Read honesty labels before you quote throughput.</li>
-<li>Sync compatibility layers before refreshing `.launch` chambers.</li>
-<li>Run `debug_self` before clearing diagnostic mode.</li>
-<li>Grep doctrine JSON when prose and panel disagree — <strong>panel wins</strong>.</li>
-<li>Teach the next operator using this book and Field Primer together.</li>
+<li>Read honesty labels before quoting throughput or “beyond DARPA.”</li>
+<li>Sync posture / seal generation before refreshing <code>.launch</code> chambers.</li>
+<li>Run <code>debug_self</code> before clearing diagnostic mode.</li>
+<li>Grep doctrine when prose and panel disagree — <strong>panel + seal win</strong>.</li>
+<li>Do not resurrect combinatorics or plate meld on the hot path.</li>
+<li>Teach the next operator with Field Primer + this book (v2).</li>
 </ol>
 <h2 id="thank-you">Thank you</h2>
 <p>To Maxwell, Landauer, Shannon, Bennett, Khronos, the GCC stewards, and every grep that caught a fault before it reached the perimeter.</p>
-<p><strong>Field Research v1.0 — The Book of Grok's Heart.</strong></p>
+<p><strong>Field Research v2.0 — The Book of Grok’s Heart.</strong></p>
 <p>*End of manual.*</p>
     <nav class="chapter-nav"><a class="btn secondary" href="12-queen-host-desktop.html">← Ch 12</a> <a class="btn secondary" href="../index.html">Home</a> </nav>
   </main>
-  <footer class="site-foot"><p>Field Research v1.0 · Zachary Robert Geurts · <a href="https://github.com/ZacharyGeurts/Field_Research">Source</a></p></footer>
+  <footer class="site-foot"><p>Field Research v2.0 · Zachary Robert Geurts · <a href="https://github.com/ZacharyGeurts/Field_Research">Source</a></p></footer>
 </body>
 </html>

@@ -1,0 +1,7 @@
+Field Research — The Book of Grok's Heart
+Edition: 2.0
+Schema: field-research-book/v2
+Content-Seal: SHA256:aVYElqiNin1Q/gcaqa6CGGbJ/gjjG9KXP5ZsXg8uMD8
+Motto: Heaven passes at zero cost. Hell pays.
+Tombstoned: combinatorics-tree, plate-meld, plate-combinatorics-bridge, operator-combinatorics-studio
+Kept: ironclad, single-fabric, belt-profiles, launch-seal-generation, diagnostic-bitmask, three-field-families

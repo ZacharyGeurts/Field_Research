@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>9 — Static Layers &amp; Launch Seals · Field Research</title>
+  <meta name="description" content="Chapter 9: Static Layers &amp; Launch Seals. Field Research — The Book of Grok's Heart." />
+  <link rel="canonical" href="https://zacharygeurts.github.io/Field_Research/chapters/09-layers-and-seals.html" />
+  <meta name="theme-color" content="#1a0810" />
+  <meta property="og:title" content="9 — Static Layers &amp; Launch Seals" />
+  <meta property="og:image" content="https://zacharygeurts.github.io/Field_Research/assets/images/compatibility-layers-art.jpg" />
+  <link rel="stylesheet" href="../css/field-research.css" />
+  <link rel="stylesheet" href="../css/chapters.css" />
+</head>
+<body class="chapter-page accent-layers">
+  <nav class="top"><div class="inner">
+    <a class="logo" href="../index.html">FIELD RESEARCH <span class="heart-badge">♥</span></a>
+    <ul>
+      <li><a href="../index.html#chapters">Chapters</a></li>
+      <li><a href="../index.html#spine">Research spine</a></li>
+      <li><a href="https://github.com/ZacharyGeurts/Field_Research">GitHub</a></li>
+    </ul>
+  </div></nav>
+  <header class="chapter-hero" style="background-image:url('../assets/images/compatibility-layers-art.jpg')">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-content">
+      <p class="eyebrow">Chapter 9 · Field Research v2.0</p>
+      <h1>Static Layers &amp; Launch Seals</h1>
+    </div>
+  </header>
+  <main class="chapter-main">
+    <nav class="chapter-nav"><a class="btn secondary" href="08-no-plate-meld.html">← Ch 8</a> <a class="btn secondary" href="../index.html">Home</a> <a class="btn" href="10-chips-from-chips.html">Ch 10 →</a></nav>
+    <p class="eyebrow">The Book of Grok's Heart</p>
+    <h2 id="layers-as-map-not-as-auto-cycle-machine">Layers as map — not as auto-cycle machine</h2>
+<p>v1 motto: *Pre-baked profiles stack upward — combinatorics runs itself; you ride the layers.*</p>
+<p>v2 motto: *Layers name dependencies. Seals name trust. Nothing cycles a tree.*</p>
+<h2 id="six-layers-names-kept">Six layers (names kept)</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Index</th><th>ID</th><th>Role</th></tr></thead><tbody>
+<tr><td>0</td><td>substrate</td><td>KILROY / linux compat pin</td></tr>
+<tr><td>1</td><td>exec</td><td>Fixed profile → belt / die / BSP</td></tr>
+<tr><td>2</td><td>program</td><td>Queen↔NEXUS, toolchain</td></tr>
+<tr><td>3</td><td>web</td><td>HTML/JS/CSS cage</td></tr>
+<tr><td>4</td><td>chips</td><td>FieldChip composition (Chapter 10)</td></tr>
+<tr><td>5</td><td>surface</td><td>NEXUS shell, Queen browser only</td></tr>
+</tbody></table></div>
+<h2 id="refresh-without-combinatorics">refresh() without combinatorics</h2>
+<p>Allowed sequence:</p>
+<ol>
+<li>Probe layer presence (cheap existence checks)</li>
+<li>Read or write <strong>sealed generation</strong></li>
+<li>Bump <code>launch_seal.generation</code> only on explicit sync</li>
+<li>Publish small panel: live layer flags + <code>profile_id</code> + seal</li>
+</ol>
+<p>Forbidden:</p>
+<ul>
+<li><code>truth_publish → combinatorics cycle → bridge</code></li>
+<li>subprocess plate refresh storms</li>
+<li>requiring meld before seal bump</li>
+</ul>
+<h2 id="launch-seals-still-the-right-key">Launch seals — still the right key</h2>
+<p><code>queen-launch-chamber.py</code> patterns remain:</p>
+<ul>
+<li><code>write_launch_file()</code> locks by default</li>
+<li><code>launch_refresh_allowed(seal_generation)</code> must match panel generation</li>
+<li>Stale seal fails closed</li>
+<li><code>verify_launch_integrity()</code> on chamber run</li>
+</ul>
+<p>Research conclusion <strong>kept from v1</strong>: compatibility sync (now <strong>posture sync</strong>) is the refresh key for launch manifests. Tamper without sync fails closed.</p>
+<h2 id="operator-view">Operator view</h2>
+<p>Show:</p>
+<ul>
+<li>L0–L5 on/off</li>
+<li><code>profile_id</code>, die slots</li>
+<li><code>launch_seal.generation</code></li>
+<li>capability mask summary (GuardChip)</li>
+</ul>
+<p>Do <strong>not</strong> show four-level combinatoric trees or thirty plate chain hashes.</p>
+<h2 id="design-alternatives-still-rejected">Design alternatives still rejected</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Alternative</th><th>Why rejected</th></tr></thead><tbody>
+<tr><td>Operator runs full tree each boot</td><td>Cognitive + heat load</td></tr>
+<tr><td>Launch refresh without seal</td><td>Tampered <code>.launch</code></td></tr>
+<tr><td>Nested compatibility stacks</td><td>Violates depth zero</td></tr>
+<tr><td><strong>Layers that secretly cycle combinatorics</strong></td><td><strong>v2 tombstone</strong></td></tr>
+</tbody></table></div>
+<h2 id="research-conclusion">Research conclusion</h2>
+<p>Layers are literacy. Seals are trust. Profiles are chosen, not scored.</p>
+<p><strong>Next:</strong> Chapter 10 — CHIPs from CHIPs.</p>
+    <nav class="chapter-nav"><a class="btn secondary" href="08-no-plate-meld.html">← Ch 8</a> <a class="btn secondary" href="../index.html">Home</a> <a class="btn" href="10-chips-from-chips.html">Ch 10 →</a></nav>
+  </main>
+  <footer class="site-foot"><p>Field Research v2.0 · Zachary Robert Geurts · <a href="https://github.com/ZacharyGeurts/Field_Research">Source</a></p></footer>
+</body>
+</html>

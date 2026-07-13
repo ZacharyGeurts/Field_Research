@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>7 — Tombstone — Why the Combinatorics Tree Died · Field Research</title>
+  <meta name="description" content="Chapter 7: Tombstone — Why the Combinatorics Tree Died. Field Research — The Book of Grok's Heart." />
+  <link rel="canonical" href="https://zacharygeurts.github.io/Field_Research/chapters/07-no-combinatorics.html" />
+  <meta name="theme-color" content="#1a0810" />
+  <meta property="og:title" content="7 — Tombstone — Why the Combinatorics Tree Died" />
+  <meta property="og:image" content="https://zacharygeurts.github.io/Field_Research/assets/images/compatibility-layers-art.jpg" />
+  <link rel="stylesheet" href="../css/field-research.css" />
+  <link rel="stylesheet" href="../css/chapters.css" />
+</head>
+<body class="chapter-page accent-combo">
+  <nav class="top"><div class="inner">
+    <a class="logo" href="../index.html">FIELD RESEARCH <span class="heart-badge">♥</span></a>
+    <ul>
+      <li><a href="../index.html#chapters">Chapters</a></li>
+      <li><a href="../index.html#spine">Research spine</a></li>
+      <li><a href="https://github.com/ZacharyGeurts/Field_Research">GitHub</a></li>
+    </ul>
+  </div></nav>
+  <header class="chapter-hero" style="background-image:url('../assets/images/compatibility-layers-art.jpg')">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-content">
+      <p class="eyebrow">Chapter 7 · Field Research v2.0</p>
+      <h1>Tombstone — Why the Combinatorics Tree Died</h1>
+    </div>
+  </header>
+  <main class="chapter-main">
+    <nav class="chapter-nav"><a class="btn secondary" href="06-sealed-generation.html">← Ch 6</a> <a class="btn secondary" href="../index.html">Home</a> <a class="btn" href="08-no-plate-meld.html">Ch 8 →</a></nav>
+    <p class="eyebrow">The Book of Grok's Heart</p>
+    <h2 id="tombstone-the-combinatorics-tree">Tombstone — the combinatorics tree</h2>
+<p><span class="tag impl">Archived design.</span> Do not build new features on this path.</p>
+<h3>What v1 built</h3>
+<p><code>Grok16/lib/field_combinatorics.py</code> was the authoritative engine for facet math:</p>
+<ol>
+<li><strong>launch_mode</strong></li>
+<li><strong>belt_profile</strong></li>
+<li><strong>truth_tier</strong></li>
+<li><strong>runner</strong> (native BSP / emulator / belt)</li>
+</ol>
+<p><code>combinatoric_tree()</code> → <code>walk_tree_to_end()</code> → <code>condense_plates()</code> → panel JSON → bridge <code>exec_posture</code>.</p>
+<p>UX evolution:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Phase</th><th>UX</th></tr></thead><tbody>
+<tr><td>1</td><td>Operator combinatorics studio</td></tr>
+<tr><td>2</td><td>Grok16 engine</td></tr>
+<tr><td>3</td><td>Plate combinatorics bridge</td></tr>
+<tr><td>4</td><td>Compatibility layers auto-cycle (v1 current)</td></tr>
+<tr><td><strong>5 (v2)</strong></td><td><strong>Tree deleted from hot path</strong></td></tr>
+</tbody></table></div>
+<h3>Why it died</h3>
+<ol>
+<li><strong>Field speed</strong> — scoring leaves and condensing groups on refresh is not free.</li>
+<li><strong>Security</strong> — posture for keylog/capture must not wait on a tree.</li>
+<li><strong>Honesty</strong> — “auto combinatorics” still meant forks, panels, and drift.</li>
+<li><strong>CHIPS</strong> — <code>runner: emulator</code> inverted chip identity; chips should be <strong>loaded by ID</strong>, not selected as a scored facet.</li>
+<li><strong>Single fabric</strong> — the tree re-encoded fixed physics (depth 0, 512 dots) as explorable options. Physics is not a menu.</li>
+</ol>
+<h3>What replaces it</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>Old</th><th>New</th></tr></thead><tbody>
+<tr><td>Facet tree</td><td>Fixed profile table</td></tr>
+<tr><td>Terminal leaf score</td><td>Explicit <code>profile_id</code></td></tr>
+<tr><td>Speed cap walk</td><td>Bench JSON offline + documented headroom</td></tr>
+<tr><td><code>runner: emulator</code></td><td>BoxChip / EraChip load (Chapter 10)</td></tr>
+<tr><td><code>/api/combinatorics</code></td><td>Gone or 410 → layers / posture</td></tr>
+</tbody></table></div>
+<h3>Historical files (look-only)</h3>
+<ul>
+<li><code>Grok16/lib/field_combinatorics.py</code></li>
+<li><code>lib/field-combinatorics-studio.py</code></li>
+<li><code>lib/field-plate-combinatorics-bridge.py</code></li>
+<li><code>data/*combinatorics*</code> panels</li>
+<li>FR v1 Chapter 7</li>
+</ul>
+<p>Keep benches under <code>docs/</code> if useful. Do not wire panel boot to them.</p>
+<h3>Research conclusion</h3>
+<p>Combinatorics answered “don’t make the operator crank.” v2 answers “don’t make the machine crank either.”</p>
+<p><strong>Next:</strong> Chapter 8 — tombstone of plate meld.</p>
+    <nav class="chapter-nav"><a class="btn secondary" href="06-sealed-generation.html">← Ch 6</a> <a class="btn secondary" href="../index.html">Home</a> <a class="btn" href="08-no-plate-meld.html">Ch 8 →</a></nav>
+  </main>
+  <footer class="site-foot"><p>Field Research v2.0 · Zachary Robert Geurts · <a href="https://github.com/ZacharyGeurts/Field_Research">Source</a></p></footer>
+</body>
+</html>

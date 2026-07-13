@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>6 — Sealed Generation — Truth Without Plates · Field Research</title>
+  <meta name="description" content="Chapter 6: Sealed Generation — Truth Without Plates. Field Research — The Book of Grok's Heart." />
+  <link rel="canonical" href="https://zacharygeurts.github.io/Field_Research/chapters/06-sealed-generation.html" />
+  <meta name="theme-color" content="#1a0810" />
+  <meta property="og:title" content="6 — Sealed Generation — Truth Without Plates" />
+  <meta property="og:image" content="https://zacharygeurts.github.io/Field_Research/assets/images/grok16-forge-art.jpg" />
+  <link rel="stylesheet" href="../css/field-research.css" />
+  <link rel="stylesheet" href="../css/chapters.css" />
+</head>
+<body class="chapter-page accent-iron">
+  <nav class="top"><div class="inner">
+    <a class="logo" href="../index.html">FIELD RESEARCH <span class="heart-badge">♥</span></a>
+    <ul>
+      <li><a href="../index.html#chapters">Chapters</a></li>
+      <li><a href="../index.html#spine">Research spine</a></li>
+      <li><a href="https://github.com/ZacharyGeurts/Field_Research">GitHub</a></li>
+    </ul>
+  </div></nav>
+  <header class="chapter-hero" style="background-image:url('../assets/images/grok16-forge-art.jpg')">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-content">
+      <p class="eyebrow">Chapter 6 · Field Research v2.0</p>
+      <h1>Sealed Generation — Truth Without Plates</h1>
+    </div>
+  </header>
+  <main class="chapter-main">
+    <nav class="chapter-nav"><a class="btn secondary" href="05-single-fabric-belt.html">← Ch 5</a> <a class="btn secondary" href="../index.html">Home</a> <a class="btn" href="07-no-combinatorics.html">Ch 7 →</a></nav>
+    <p class="eyebrow">The Book of Grok's Heart</p>
+    <h2 id="truth-without-plates">Truth without plates</h2>
+<p>v1 iron plate + truth blocks + uncompiled default optimized <strong>dev velocity</strong> while a plate meld bus published “single JSON truth.” That bus grew to thirty sources, subprocess refresh, triple mirrors, and multi-MB panels.</p>
+<p>v2 keeps the <strong>intent</strong> (fail-closed trust, uncompiled when appropriate, monotonic generation) and deletes the bus.</p>
+<h2 id="sealed-generation-the-one-number-that-matters">Sealed generation — the one number that matters</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Field</th><th>Role</th></tr></thead><tbody>
+<tr><td><code>generation</code></td><td>Monotonic u64 / integer — bumps on explicit sync or fault collapse</td></tr>
+<tr><td><code>layout_hash</code></td><td>Digest of die/fabric/capability schema</td></tr>
+<tr><td><code>profile_id</code></td><td>Fixed string: <code>belt_2_0</code>, <code>field_opt</code>, …</td></tr>
+<tr><td><code>capability_mask</code></td><td>GuardChip bits (Chapter 11)</td></tr>
+<tr><td><code>launch_seal.generation</code></td><td>Must match for <code>.launch</code> chamber refresh</td></tr>
+</tbody></table></div>
+<p>Write path (rare): flock optional · fsync · single <code>.bak</code> sibling. Read path (hot): compare generation word — <strong>zero allocations when calm</strong>.</p>
+<p>Content seal for this book edition (manuscript identity, not runtime posture):</p>
+<div class="code-block"><pre>
+SHA256:aVYElqiNin1Q/gcaqa6CGGbJ/gjjG9KXP5ZsXg8uMD8
+</pre></div>
+<h2 id="what-happened-to-truth-blocks">What happened to truth blocks</h2>
+<p>Truth blocks remain a <strong>compile / mandate gate</strong> (“may we ship this binary / chamber?”). They no longer <strong>condense plate groups</strong> or prune combinatoric leaves.</p>
+<p>Uncompiled default for chambers stays valid: secured <code>.launch</code> files refresh only when seal generation matches — Chapter 9.</p>
+<h2 id="zero-cost-4-slot-alignment">Zero-cost 4-slot alignment</h2>
+<p>Queen <code>queen-zero-cost-4slot.json</code> already defines:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Slot</th><th>Guards</th></tr></thead><tbody>
+<tr><td>TIME</td><td>sealed epoch · genesis · entropy verify</td></tr>
+<tr><td>MEMORY</td><td>regions · mmap · foreign write denied</td></tr>
+<tr><td>THERMO</td><td>accountant · budget · FCC scale</td></tr>
+<tr><td>CONTEXT</td><td>syscall generation · layout · seal hash</td></tr>
+</tbody></table></div>
+<p>Runtime tax: <strong>0</strong>. Tamper: <strong>abort</strong>.</p>
+<p>v2 posture seal is the host/panel twin of that engine idea. Same religion: compile-time / boot-time seal, hot path is a compare.</p>
+<h2 id="no-fork-tax">No fork tax</h2>
+<p>Forbidden on calm path:</p>
+<ul>
+<li><code>subprocess</code> per plate source</li>
+<li>tree walk scoring</li>
+<li>multi-panel “fuse then read bridge”</li>
+</ul>
+<p>Allowed:</p>
+<ul>
+<li>in-process import once</li>
+<li>mmap / atomic read of posture</li>
+<li>explicit operator or CI <code>sync</code> command</li>
+</ul>
+<h2 id="research-conclusion">Research conclusion</h2>
+<p>Iron plate language becomes <strong>sealed generation</strong>. Durability stays (one file + bak). Multi-source fuse religion leaves the architecture.</p>
+<p><strong>Next:</strong> Chapter 7 — tombstone of combinatorics.</p>
+    <nav class="chapter-nav"><a class="btn secondary" href="05-single-fabric-belt.html">← Ch 5</a> <a class="btn secondary" href="../index.html">Home</a> <a class="btn" href="07-no-combinatorics.html">Ch 7 →</a></nav>
+  </main>
+  <footer class="site-foot"><p>Field Research v2.0 · Zachary Robert Geurts · <a href="https://github.com/ZacharyGeurts/Field_Research">Source</a></p></footer>
+</body>
+</html>

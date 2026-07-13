@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>2 — Three Field Families — GPU Fabric, Field Die, Packet Field · Field Research</title>
-  <meta name="description" content="Chapter 2: Three Field Families — GPU Fabric, Field Die, Packet Field. Field Research — The Book of Grok's Heart." />
+  <title>2 — Three Field Families — Fabric, Die, Packet · Field Research</title>
+  <meta name="description" content="Chapter 2: Three Field Families — Fabric, Die, Packet. Field Research — The Book of Grok's Heart." />
   <link rel="canonical" href="https://zacharygeurts.github.io/Field_Research/chapters/02-three-field-families.html" />
   <meta name="theme-color" content="#1a0810" />
-  <meta property="og:title" content="2 — Three Field Families — GPU Fabric, Field Die, Packet Field" />
+  <meta property="og:title" content="2 — Three Field Families — Fabric, Die, Packet" />
   <meta property="og:image" content="https://zacharygeurts.github.io/Field_Research/assets/images/field-research-hero.jpg" />
   <link rel="stylesheet" href="../css/field-research.css" />
   <link rel="stylesheet" href="../css/chapters.css" />
@@ -24,46 +24,55 @@
   <header class="chapter-hero" style="background-image:url('../assets/images/field-research-hero.jpg')">
     <div class="chapter-hero-overlay"></div>
     <div class="chapter-hero-content">
-      <p class="eyebrow">Chapter 2 · Field Research v1.0</p>
-      <h1>Three Field Families — GPU Fabric, Field Die, Packet Field</h1>
+      <p class="eyebrow">Chapter 2 · Field Research v2.0</p>
+      <h1>Three Field Families — Fabric, Die, Packet</h1>
     </div>
   </header>
   <main class="chapter-main">
     <nav class="chapter-nav"><a class="btn secondary" href="01-preface-ironclad.html">← Ch 1</a> <a class="btn secondary" href="../index.html">Home</a> <a class="btn" href="03-thermodynamics-entropy.html">Ch 3 →</a></nav>
     <p class="eyebrow">The Book of Grok's Heart</p>
     <h2 id="three-families-one-literacy">Three families, one literacy</h2>
-<p>Field Research assumes you have met the three families from Field Primer Chapter 2. We repeat them here because <strong>every Grok16 facet and every compatibility layer ultimately serves one of these</strong>:</p>
+<p>Field Research assumes you have met the three families from Field Primer Chapter 2. We repeat them because <strong>every GuardChip permit and every BoxChip load ultimately serves one of these</strong>.</p>
 <h2 id="family-1-gpu-fabric-amouranthrtx">Family 1 — GPU fabric (AMOURANTHRTX)</h2>
-<p><strong>Binding map:</strong> Phi (8), Thermo (9), Flow (10).</p>
-<p>The GPU is not a pretty screen. It is <strong>addressable field state</strong> — texels as memory, shaders as operators, SSBO strips as thermodynamic ledgers. AMOURANTHRTX Navigator hosts CHIPS emulation behind the same fabric.</p>
-<p>Research conclusion: combinatorics <code>runner</code> facet must know when execution stays on <strong>GPU BSP</strong> vs when it drops to native belt. The bridge reads meld plates including <code>g16_stack</code> and <code>g16_compiler_sense</code> to decide.</p>
-<p><span class="tag impl">Implemented:</span> <code>AMOURANTHRTX/Navigator/engine/CHIPS/</code>, Queen <code>queen-chips.py</code>.</p>
-<h2 id="family-2-field-die-fieldx86die">Family 2 — Field die (FieldX86Die)</h2>
-<p><strong>Binding 1:</strong> 64 MiB linear address strip, wave bands, epoch frames.</p>
-<p>The die is the <strong>silicon metaphor made executable</strong>: <code>fieldx86</code> facets in <code>g16-field-combinatorics-doctrine.json</code> define <code>belt_1_0</code> (256 slots) and <code>belt_2_0</code> (512 slots). Hard limits come from <code>field_combinatorics.hard_limits()</code> — 8³ dots per box, four scale nets, <strong>max_field_depth: 0</strong>.</p>
-<p>Research conclusion: knowing is <strong>fixed-size belt dispatch</strong>, not nested fields. This is Grok16 2.0 single fabric.</p>
-<h2 id="family-3-packet-field-nexus-shield">Family 3 — Packet field (NEXUS-Shield)</h2>
-<p><strong>Perimeter:</strong> gatekeeper, packet-field.json, threat panel :9477.</p>
-<p>Sockets become <strong>readable perimeter</strong>. IFF tables, connection intent, DPI classification. The packet field is where <strong>diagnostic mode</strong> publishes its quarantine state.</p>
-<p>Research conclusion: compatibility layer 5 (Field surface) serves NEXUS shell programs; layer 1 (Substrate) pins KILROY/linux compat under the die.</p>
-<h2 id="cross-family-data-flow">Cross-family data flow</h2>
+<p>Addressable field state: texels as memory, shaders as operators, SSBO strips as thermodynamic ledgers. Phi · Thermo · Flow on bindings 8–10. CANVAS and Field Die share the same dispatch plane.</p>
+<p><span class="tag impl">Implemented:</span> <code>AMOURANTHRTX/Navigator/</code>, fabric map in <code>amouranthrtx-field-fabric-map.json</code>.</p>
+<p>v2 note: fabric does <strong>not</strong> consult a combinatorics runner facet. Fabric runs; HostChip / BoxChip load is explicit.</p>
+<h2 id="family-2-field-die">Family 2 — Field Die</h2>
+<p>The die is silicon metaphor made executable: guest RAM (~64 MiB), <code>data_bus[64]</code>, x86 console path (<code>x86.comp</code> / FieldX86Core).</p>
+<p>Hard limits remain physics boxes:</p>
+<ul>
+<li>8³ dots per box (512)</li>
+<li>four scale nets — <code>body</code> → <code>room</code> → <code>field</code> → <code>planetary</code></li>
+<li><strong><code>max_field_depth: 0</code></strong></li>
+</ul>
+<p>Belt profiles (<code>belt_1_0</code> 256 slots, <code>belt_2_0</code> 512 slots) are <strong>fixed compile/exec choices</strong>, not leaves on a scored tree.</p>
+<h2 id="family-3-packet-field-nexus">Family 3 — Packet field (NEXUS)</h2>
+<p>Perimeter: gatekeeper, packet-field ring, threat panel <code>:9477</code>. Sockets become operator-readable state. Diagnostic mode collapses capability mask under fault.</p>
+<p>v2: perimeter posture is a <strong>bitmask + generation</strong>, not a meld plate skip list.</p>
+<h2 id="how-families-couple-v2">How families couple (v2)</h2>
 <div class="code-block"><pre>
-GPU fabric ←→ Field die ←→ Packet field
-     ↑              ↑              ↑
-  CHIPS L4      combinatorics   gatekeeper
-  emu BSP       belt/die        diagnostic
+GPU fabric  ←→  Field Die  ←→  Packet field
+   C1/C2 chips     C0 HostChip      C4 WireChip
+                   C3 GuardChip (INPUT/VIEW/CONTEXT)
 </pre></div>
-<h2 id="operator-map-project-names-on-first-use">Operator map — project names on first use</h2>
-<p>| Name | Role in this book | |------|-------------------| | Grok16 | Unified <code>g16</code> driver, belt profiles, combinatorics engine | | NewLatest | NEXUS-Shield install root, plate meld, compatibility layers | | Queen | Browser gates, launch chambers, CHIPS registry | | KILROY | Kernel/linux compat substrate pin | | Hostess7 | Brain guard, self-view, corruption hold |</p>
-<h2 id="validation-what-you-can-grep-today">Validation — what you can grep today</h2>
-<div class="code-block"><pre>
-grep -r &quot;belt_2_0&quot; Grok16/data/
-grep &quot;compatibility_layers&quot; NewLatest/lib/field-panel-parallel.py
-grep &quot;launch_seal&quot; NewLatest/Queen/lib/queen-launch-chamber.py
-</pre></div>
-<p><strong>Next:</strong> Chapter 3 — why thermodynamics and entropy oracles sit in the engine, not in slide decks.</p>
+<p>No middle bus of 30 JSON plates. Coupling is:</p>
+<ol>
+<li>Shared <strong>sealed generation</strong> (Chapter 6)</li>
+<li>Shared <strong>capability mask</strong> (Chapter 11)</li>
+<li>Explicit chip load IDs (Chapter 10)</li>
+</ol>
+<h2 id="stack-roles">Stack roles</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Piece</th><th>Role</th></tr></thead><tbody>
+<tr><td>Grok16</td><td>Unified <code>g16</code> driver, belt / field_opt / field_physics profiles</td></tr>
+<tr><td>NewLatest / NEXUS</td><td>Install root, panel, packet field</td></tr>
+<tr><td>Queen</td><td>Browser gate, launch chambers, CHIPS registry</td></tr>
+<tr><td>AMOURANTHRTX</td><td>Fabric + die engine</td></tr>
+<tr><td>Amouranth Shield</td><td>Host install-time hardening (nft, screen baseline) — not the hot-path truth bus</td></tr>
+</tbody></table></div>
+<p><strong>Next:</strong> Chapter 3 — thermodynamics as accounting, not heat religion for trees.</p>
     <nav class="chapter-nav"><a class="btn secondary" href="01-preface-ironclad.html">← Ch 1</a> <a class="btn secondary" href="../index.html">Home</a> <a class="btn" href="03-thermodynamics-entropy.html">Ch 3 →</a></nav>
   </main>
-  <footer class="site-foot"><p>Field Research v1.0 · Zachary Robert Geurts · <a href="https://github.com/ZacharyGeurts/Field_Research">Source</a></p></footer>
+  <footer class="site-foot"><p>Field Research v2.0 · Zachary Robert Geurts · <a href="https://github.com/ZacharyGeurts/Field_Research">Source</a></p></footer>
 </body>
 </html>

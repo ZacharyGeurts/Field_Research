@@ -1,63 +1,50 @@
-## From GCC 16.2 to one driver named g16
+## From GCC to one driver named g16
 
 Grok16 began as a question: *Can we own the full compile chain for field-native execution without forking reality?*
 
-The answer shipped as:
+Answer shipped: unified ELF **`g16`** (auto C/C++ and more), `g++16` compat symlink, distro track 5.x, engine stamp **16.2.0**, default **gnu++26** where mandated.
 
+```bash
+export G16_PREFIX=/path/to/Grok16
+export GROK16_ROOT="$G16_PREFIX"
+./scripts/grok16-toolchain.sh verify
+./bin/g16 -dumpversion   # 16.2.0
 ```
-vendor/gcc (16.2.0) → build/gcc → bin/g16 (unified driver)
-    → libexec/grok16/{g16-cc, g16-cxx, g16-ld-bfd}
-```
 
-The unified driver **discerns** C, C++, Python, and ASM. `g++16` is a symlink. One entry point; many faces — like iron plate triad (assembly → entropy → field).
+## Fixed profiles — no sense plate ladder on hot path
 
-![Grok16 forge — unified die on the anvil](../assets/images/grok16-forge-art.jpg)
+| Profile | Use |
+|---------|-----|
+| `belt_1_0` | Baseline belt |
+| `belt_2_0` | Default single-fabric belt (512 die slots) |
+| `field_opt` | Throughput field kernels (may use fast-math) |
+| `field_physics` | Physics-safe — belt spirit without `-ffast-math` |
+| `ai` / `vulkan_rtx` | Specialized consumers |
 
-## Self-host chain and release 3.0
+v1 used `g16-compiler-sense-plate.py` + meld to pick expert ladders (−413 ms compile on one host). That was a real receipt — and a **runtime dependency** we reject for v2 architecture.
 
-`RELEASE-3.0.md` and `wiki/Speed-Bench.md` document the release chain:
+v2: operator or CI **selects a profile once**. Optional offline `g16 sense` may exist as a bench tool; it must not gate every boot through plate fuse.
 
-- `test-battery-release`
-- `test-battery-belt`
-- Versioned `SPEED-BENCH-REPORT.md`
+## Field CMake
 
-Research receipt (reference host): C++ `belt_2_0` ~85M ops/s; host `g++` ~87M ops/s; Python interpreter ~0.7–0.8M ops/s. Dev default is **uncompiled normal speed** per `field-exec-uncompiled-doctrine.json`.
+Canonical consumer path:
 
-## Integration consumers
+- `cmake/grok16-toolchain.cmake`
+- `cmake/grok16-profile-field-opt.cmake` or `field-physics`
+- `scripts/field-cmake.sh` for Queen RTX-style builds
 
-`grok16-integrate.sh` wires:
+AMOURANTHRTX CMake already detects `g16` / `GROK16_ROOT`. Prefer that over silent g++-14 fallback for field builds.
 
-- NewLatest/Queen (RTX build, g16+ninja)
-- World_Redata `field_g16.hh` (gnu++26)
-- ZOCR field compiler
-- PythonG / Final_Ear
+## Gates that remain
 
-Field Research treats Grok16 as **infrastructure**, not a side project. Compatibility layer 2 (Program interop) references `pythong_tools.py` and Queen↔NEXUS jump.
+- Ironclad / field sanity on release binaries
+- Launch seal generation for `.launch` chambers
+- Honesty: scaffold CHIPS vs implemented cores
 
-Grok16 wires this book via `data/g16-field-research-book.json` and `lib/field-research-book.py` — run `verify` / `publish` or `./scripts/grok16-integrate.sh` after pull.
-
-## Compiler sense — profiles before compile
-
-`g16-compiler-sense-doctrine.json` defines the ladder:
-
-`field_opt` → `expert` → `heavy` → `forever`
-
-`g16-compiler-sense-plate.py` reads meld + bridge posture. Plate meld bench doctrine records: meld helps **profile selection** (−413 ms compile when sense picks expert over static `belt_2_0`), not raw ELF throughput.
-
-## Safety gates on the forge
-
-`grok16-single-fabric-doctrine.json` lists gates:
-
-- `g16-field-mandate`
-- `g16-ironclad-sanity`
-- `field-depth-singularizer`
-- `queen-field-sanity`
-- `sovereign-linear-time`
-
-No gate passed → no release binary trusted. Diagnostic mode includes `g1id-baseline.py` and `ironclad-field-sanity.py` in secure baseline scripts.
+No gate requires combinatorics `walk_tree_to_end()`.
 
 ## Research conclusion
 
-The forge produces **one driver** that speaks field dialects. Combinatorics chooses **which dialect face** (belt, runner, emulator). Compatibility layers **pre-bake** the stack so the operator rides, not cranks.
+The forge produces **one driver** that speaks field dialects. v2 chooses dialect with a **fixed profile name**, not a scored leaf on a four-facet tree.
 
-**Next:** Chapter 5 — single fabric and belt_2_0 knowing.
+**Next:** Chapter 5 — single fabric and belt, depth zero forever.
