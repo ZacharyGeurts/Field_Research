@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>8 — Tombstone — Why Plate Meld Died · Field Research</title>
+  <meta name="description" content="Chapter 8: Tombstone — Why Plate Meld Died. Field Research — The Book of Grok's Heart." />
+  <link rel="canonical" href="https://zacharygeurts.github.io/Field_Research/chapters/08-no-plate-meld.html" />
+  <meta name="theme-color" content="#1a0810" />
+  <meta property="og:title" content="8 — Tombstone — Why Plate Meld Died" />
+  <meta property="og:image" content="https://zacharygeurts.github.io/Field_Research/assets/images/plate-meld-art.jpg" />
+  <link rel="stylesheet" href="../css/field-research.css" />
+  <link rel="stylesheet" href="../css/chapters.css" />
+</head>
+<body class="chapter-page accent-meld">
+  <nav class="top"><div class="inner">
+    <a class="logo" href="../index.html">FIELD RESEARCH <span class="heart-badge">♥</span></a>
+    <ul>
+      <li><a href="../index.html#chapters">Chapters</a></li>
+      <li><a href="../index.html#spine">Research spine</a></li>
+      <li><a href="https://github.com/ZacharyGeurts/Field_Research">GitHub</a></li>
+    </ul>
+  </div></nav>
+  <header class="chapter-hero" style="background-image:url('../assets/images/plate-meld-art.jpg')">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-content">
+      <p class="eyebrow">Chapter 8 · Field Research v2.0</p>
+      <h1>Tombstone — Why Plate Meld Died</h1>
+    </div>
+  </header>
+  <main class="chapter-main">
+    <nav class="chapter-nav"><a class="btn secondary" href="07-no-combinatorics.html">← Ch 7</a> <a class="btn secondary" href="../index.html">Home</a> <a class="btn" href="09-layers-and-seals.html">Ch 9 →</a></nav>
+    <p class="eyebrow">The Book of Grok's Heart</p>
+    <h2 id="tombstone-plate-meld">Tombstone — plate meld</h2>
+<p><span class="tag impl">Archived design.</span> Do not build new features on this path.</p>
+<h3>What v1 built</h3>
+<p><code>field-plate-meld.py</code> motto: flock + fsync + chain-hash + triple mirror.</p>
+<p>Thirty-ish plate sources (iron_plate, gatekeeper, combinatorics, hostess7_brain, spatial, firmware, …) refreshed into one generation-linked JSON. Diagnostic mode gated which sources could refresh. Compiler sense read meld to pick profiles. Compatibility layers and launch seals trusted meld first.</p>
+<h3>What was right</h3>
+<ul>
+<li>Monotonic generation</li>
+<li>Durability under power loss (fsync + bak)</li>
+<li>Fault isolation impulse (stop refreshing fault-adjacent work)</li>
+<li>Single place for greppable truth</li>
+</ul>
+<h3>What was wrong</h3>
+<ol>
+<li><strong>Fork storms</strong> — subprocess per plate on full meld.</li>
+<li><strong>False unity</strong> — “single truth” that re-fused stale peers into multi-MB panels.</li>
+<li><strong>Security latency</strong> — keylog/capture policy should not wait on hostess7 + spatial + firmware plates.</li>
+<li><strong>Speed</strong> — post-meld hot ratio ~0.986 was a receipt that meld is almost free *after* work; the refresh path was not free.</li>
+<li><strong>Depth culture</strong> — every new idea became another plate source.</li>
+</ol>
+<h3>What replaces it</h3>
+<p>Chapter 6 sealed generation: one posture artifact, one bak, generation + mask + profile_id.</p>
+<p>Diagnostic mode becomes <strong>mask collapse</strong>, not <code>_refresh_if_allowed</code> plate lists.</p>
+<h3>Historical files (look-only)</h3>
+<ul>
+<li><code>lib/field-plate-meld.py</code> (~1.7k LOC)</li>
+<li><code>lib/field-plate-meld-orchestrator.py</code></li>
+<li><code>data/field-plate-meld-doctrine.json</code></li>
+<li><code>plate-meld-redundant/</code></li>
+<li>FR v1 Chapter 8</li>
+</ul>
+<h3>Research conclusion</h3>
+<p>Meld taught us generation and durability. It must not remain the nervous system of the field stack.</p>
+<p><strong>Next:</strong> Chapter 9 — static layers and launch seals.</p>
+    <nav class="chapter-nav"><a class="btn secondary" href="07-no-combinatorics.html">← Ch 7</a> <a class="btn secondary" href="../index.html">Home</a> <a class="btn" href="09-layers-and-seals.html">Ch 9 →</a></nav>
+  </main>
+  <footer class="site-foot"><p>Field Research v2.0 · Zachary Robert Geurts · <a href="https://github.com/ZacharyGeurts/Field_Research">Source</a></p></footer>
+</body>
+</html>

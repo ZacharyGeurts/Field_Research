@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>11 — GuardChip — Zero-Cost Keylog &amp; Capture Defense · Field Research</title>
+  <meta name="description" content="Chapter 11: GuardChip — Zero-Cost Keylog &amp; Capture Defense. Field Research — The Book of Grok's Heart." />
+  <link rel="canonical" href="https://zacharygeurts.github.io/Field_Research/chapters/11-guardchip-security.html" />
+  <meta name="theme-color" content="#1a0810" />
+  <meta property="og:title" content="11 — GuardChip — Zero-Cost Keylog &amp; Capture Defense" />
+  <meta property="og:image" content="https://zacharygeurts.github.io/Field_Research/assets/images/diagnostic-mode-art.jpg" />
+  <link rel="stylesheet" href="../css/field-research.css" />
+  <link rel="stylesheet" href="../css/chapters.css" />
+</head>
+<body class="chapter-page accent-nexus">
+  <nav class="top"><div class="inner">
+    <a class="logo" href="../index.html">FIELD RESEARCH <span class="heart-badge">♥</span></a>
+    <ul>
+      <li><a href="../index.html#chapters">Chapters</a></li>
+      <li><a href="../index.html#spine">Research spine</a></li>
+      <li><a href="https://github.com/ZacharyGeurts/Field_Research">GitHub</a></li>
+    </ul>
+  </div></nav>
+  <header class="chapter-hero" style="background-image:url('../assets/images/diagnostic-mode-art.jpg')">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-content">
+      <p class="eyebrow">Chapter 11 · Field Research v2.0</p>
+      <h1>GuardChip — Zero-Cost Keylog &amp; Capture Defense</h1>
+    </div>
+  </header>
+  <main class="chapter-main">
+    <nav class="chapter-nav"><a class="btn secondary" href="10-chips-from-chips.html">← Ch 10</a> <a class="btn secondary" href="../index.html">Home</a> <a class="btn" href="12-queen-host-desktop.html">Ch 12 →</a></nav>
+    <p class="eyebrow">The Book of Grok's Heart</p>
+    <h2 id="zero-cost-security-heaven-passes-free">Zero-cost security — Heaven passes free</h2>
+<p>Motto: <strong>Heaven passes at zero cost. Hell pays.</strong></p>
+<p>Calm path: one compare of sealed generation + capability mask. No proc walk, no plate fuse, no tree.</p>
+<div class="code-block"><pre>
+if (generation == sealed &amp;&amp; (mask &amp; NEED) == NEED) return ALLOW;
+else deny or diagnostic_collapse();
+</pre></div>
+<h2 id="guardchip-c3-slots">GuardChip (C3) slots</h2>
+<p>Extend Queen’s zero-cost 4-slot (TIME · MEMORY · THERMO · CONTEXT) with host-critical permits:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Slot</th><th>Seals</th><th>Default</th></tr></thead><tbody>
+<tr><td>TIME</td><td>epoch · monotonic generation</td><td>sealed</td></tr>
+<tr><td>MEMORY</td><td>die/canvas region policy</td><td>no foreign write</td></tr>
+<tr><td>THERMO</td><td>entropy budget</td><td>budgeted</td></tr>
+<tr><td>CONTEXT</td><td>layout hash · launch seal</td><td>sealed</td></tr>
+<tr><td><strong>INPUT</strong></td><td>who may read keys / inject</td><td><strong>deny hooks</strong></td></tr>
+<tr><td><strong>VIEW</strong></td><td>who may sample pixels</td><td><strong>deny capture</strong></td></tr>
+</tbody></table></div>
+<p>Optional: CLIP lane for paste channel (ghost clipboard patterns already in host-desktop).</p>
+<h2 id="keylogging">Keylogging</h2>
+<p>v1 inventory: name denylists in <code>admin-window-shield.py</code>, <code>hardware_wire_registry.py</code>, <code>NEXUS_NO_KEYBOARD_HOOK</code>, Amouranth Shield anti-surveillance.</p>
+<p><strong>Gap:</strong> renamed binaries, in-process hooks, kernel modules slip past polls.</p>
+<p><strong>v2 design:</strong></p>
+<ul>
+<li>INPUT slot grants only seat owner + field keybinding service</li>
+<li>Synthetic inject tools (xdotool class) never receive grant near admin surfaces</li>
+<li>Polling scanners become <strong>dirty-mask only</strong> (pay when generation dirty), not 30s forever storms</li>
+<li>Browser admin portals keep CSP: no unexpected keyboard capture APIs</li>
+</ul>
+<p><span class="tag impl">Partial today:</span> denylists + env flags. <span class="tag phil">Target:</span> capability seat model with zero calm tax.</p>
+<h2 id="screenshots-and-screen-capture">Screenshots and screen capture</h2>
+<p>v1: block spectacle/grim/obs-class procs; Amouranth Shield screen_guard; OBS PipeWire whitelist as intentional hole; AmmoCode collab <strong>element-only</strong>, no <code>getDisplayMedia</code>, host grant, max 2 fps.</p>
+<p><strong>v2 design:</strong></p>
+<div class="table-wrap"><table>
+<thead><tr><th>VIEW mode</th><th>Meaning</th></tr></thead><tbody>
+<tr><td><code>0</code></td><td>No capture</td></tr>
+<tr><td><code>obs_pipewire:<fingerprint></code></td><td>Explicit OBS permit</td></tr>
+<tr><td><code>collab_element</code></td><td>AmmoCode-style element share</td></tr>
+<tr><td><code>operator_grant</code></td><td>Time-boxed screenshot grant</td></tr>
+</tbody></table></div>
+<p>Full desktop scrape without VIEW bit = deny. Engine framebuffer reads bound to MEMORY + VIEW.</p>
+<h2 id="diagnostic-mode-bitmask-not-plate-list">Diagnostic mode (bitmask, not plate list)</h2>
+<p>v1 fault signals stay meaningful: ironclad sanity, g1id, io-packet, filesystem critical, thermal crit, brain corruption.</p>
+<p>engage():</p>
+<ol>
+<li>detect_problems</li>
+<li><code>mask &= BASELINE</code></li>
+<li><code>generation++</code></li>
+<li>baseline-only modules</li>
+<li>clear only after <code>debug_self</code> passes</li>
+</ol>
+<p>No meld <code>_refresh_if_allowed</code>. No combinatorics skip.</p>
+<h2 id="beyond-darpa-doctrine-honesty">Beyond-DARPA doctrine — honesty</h2>
+<p><code>beyond-darpa-security-doctrine.json</code> states high ambition (human channels situational, machine hostile, fail-closed). Label claims:</p>
+<ul>
+<li>Doctrine file + assess API: <strong>Implemented</strong> scaffolding</li>
+<li>“Exceeds DARPA/Lockheed”: <strong>Philosophy</strong> until gates are seat-level and compile-sealed</li>
+</ul>
+<p>v2 prefers <strong>working zero-cost mask</strong> over slogan tier names.</p>
+<h2 id="host-install-vs-field-hot-path">Host install vs field hot path</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Layer</th><th>Role</th></tr></thead><tbody>
+<tr><td>Amouranth Shield (<code>ammo.sh</code>)</td><td>Host nft, screen baseline, OBS whitelist install</td></tr>
+<tr><td>GuardChip FSC</td><td>Runtime field permits for NEXUS/Queen/engine</td></tr>
+<tr><td>AmmoCode security</td><td>Collab tunnel + screenshare session proofs</td></tr>
+</tbody></table></div>
+<p>One permit <strong>ledger schema</strong>; three surfaces may enforce.</p>
+<h2 id="research-conclusion">Research conclusion</h2>
+<p>Perimeter is not only firewall rules. It is <strong>which capabilities exist when generation is calm</strong>. Keylog and screenshot defense graduate from name lists to <strong>GuardChip slots</strong> without paying for Hell when Heaven is quiet.</p>
+<p><strong>Next:</strong> Chapter 12 — Queen desktop wires VIEW/INPUT.</p>
+    <nav class="chapter-nav"><a class="btn secondary" href="10-chips-from-chips.html">← Ch 10</a> <a class="btn secondary" href="../index.html">Home</a> <a class="btn" href="12-queen-host-desktop.html">Ch 12 →</a></nav>
+  </main>
+  <footer class="site-foot"><p>Field Research v2.0 · Zachary Robert Geurts · <a href="https://github.com/ZacharyGeurts/Field_Research">Source</a></p></footer>
+</body>
+</html>

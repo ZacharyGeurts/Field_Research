@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>4 — Grok16 Forge — One Driver, Fixed Profiles · Field Research</title>
+  <meta name="description" content="Chapter 4: Grok16 Forge — One Driver, Fixed Profiles. Field Research — The Book of Grok's Heart." />
+  <link rel="canonical" href="https://zacharygeurts.github.io/Field_Research/chapters/04-grok16-forge.html" />
+  <meta name="theme-color" content="#1a0810" />
+  <meta property="og:title" content="4 — Grok16 Forge — One Driver, Fixed Profiles" />
+  <meta property="og:image" content="https://zacharygeurts.github.io/Field_Research/assets/images/grok16-forge-art.jpg" />
+  <link rel="stylesheet" href="../css/field-research.css" />
+  <link rel="stylesheet" href="../css/chapters.css" />
+</head>
+<body class="chapter-page accent-forge">
+  <nav class="top"><div class="inner">
+    <a class="logo" href="../index.html">FIELD RESEARCH <span class="heart-badge">♥</span></a>
+    <ul>
+      <li><a href="../index.html#chapters">Chapters</a></li>
+      <li><a href="../index.html#spine">Research spine</a></li>
+      <li><a href="https://github.com/ZacharyGeurts/Field_Research">GitHub</a></li>
+    </ul>
+  </div></nav>
+  <header class="chapter-hero" style="background-image:url('../assets/images/grok16-forge-art.jpg')">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-content">
+      <p class="eyebrow">Chapter 4 · Field Research v2.0</p>
+      <h1>Grok16 Forge — One Driver, Fixed Profiles</h1>
+    </div>
+  </header>
+  <main class="chapter-main">
+    <nav class="chapter-nav"><a class="btn secondary" href="03-thermodynamics-entropy.html">← Ch 3</a> <a class="btn secondary" href="../index.html">Home</a> <a class="btn" href="05-single-fabric-belt.html">Ch 5 →</a></nav>
+    <p class="eyebrow">The Book of Grok's Heart</p>
+    <h2 id="from-gcc-to-one-driver-named-g16">From GCC to one driver named g16</h2>
+<p>Grok16 began as a question: *Can we own the full compile chain for field-native execution without forking reality?*</p>
+<p>Answer shipped: unified ELF <strong><code>g16</code></strong> (auto C/C++ and more), <code>g++16</code> compat symlink, distro track 5.x, engine stamp <strong>16.2.0</strong>, default <strong>gnu++26</strong> where mandated.</p>
+<div class="code-block"><pre>
+export G16_PREFIX=/path/to/Grok16
+export GROK16_ROOT=&quot;$G16_PREFIX&quot;
+./scripts/grok16-toolchain.sh verify
+./bin/g16 -dumpversion   # 16.2.0
+</pre></div>
+<h2 id="fixed-profiles-no-sense-plate-ladder-on-hot-path">Fixed profiles — no sense plate ladder on hot path</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Profile</th><th>Use</th></tr></thead><tbody>
+<tr><td><code>belt_1_0</code></td><td>Baseline belt</td></tr>
+<tr><td><code>belt_2_0</code></td><td>Default single-fabric belt (512 die slots)</td></tr>
+<tr><td><code>field_opt</code></td><td>Throughput field kernels (may use fast-math)</td></tr>
+<tr><td><code>field_physics</code></td><td>Physics-safe — belt spirit without <code>-ffast-math</code></td></tr>
+<tr><td><code>ai</code> / <code>vulkan_rtx</code></td><td>Specialized consumers</td></tr>
+</tbody></table></div>
+<p>v1 used <code>g16-compiler-sense-plate.py</code> + meld to pick expert ladders (−413 ms compile on one host). That was a real receipt — and a <strong>runtime dependency</strong> we reject for v2 architecture.</p>
+<p>v2: operator or CI <strong>selects a profile once</strong>. Optional offline <code>g16 sense</code> may exist as a bench tool; it must not gate every boot through plate fuse.</p>
+<h2 id="field-cmake">Field CMake</h2>
+<p>Canonical consumer path:</p>
+<ul>
+<li><code>cmake/grok16-toolchain.cmake</code></li>
+<li><code>cmake/grok16-profile-field-opt.cmake</code> or <code>field-physics</code></li>
+<li><code>scripts/field-cmake.sh</code> for Queen RTX-style builds</li>
+</ul>
+<p>AMOURANTHRTX CMake already detects <code>g16</code> / <code>GROK16_ROOT</code>. Prefer that over silent g++-14 fallback for field builds.</p>
+<h2 id="gates-that-remain">Gates that remain</h2>
+<ul>
+<li>Ironclad / field sanity on release binaries</li>
+<li>Launch seal generation for <code>.launch</code> chambers</li>
+<li>Honesty: scaffold CHIPS vs implemented cores</li>
+</ul>
+<p>No gate requires combinatorics <code>walk_tree_to_end()</code>.</p>
+<h2 id="research-conclusion">Research conclusion</h2>
+<p>The forge produces <strong>one driver</strong> that speaks field dialects. v2 chooses dialect with a <strong>fixed profile name</strong>, not a scored leaf on a four-facet tree.</p>
+<p><strong>Next:</strong> Chapter 5 — single fabric and belt, depth zero forever.</p>
+    <nav class="chapter-nav"><a class="btn secondary" href="03-thermodynamics-entropy.html">← Ch 3</a> <a class="btn secondary" href="../index.html">Home</a> <a class="btn" href="05-single-fabric-belt.html">Ch 5 →</a></nav>
+  </main>
+  <footer class="site-foot"><p>Field Research v2.0 · Zachary Robert Geurts · <a href="https://github.com/ZacharyGeurts/Field_Research">Source</a></p></footer>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>10 — CHIPs from CHIPs — C0–C4 Composition · Field Research</title>
+  <meta name="description" content="Chapter 10: CHIPs from CHIPs — C0–C4 Composition. Field Research — The Book of Grok's Heart." />
+  <link rel="canonical" href="https://zacharygeurts.github.io/Field_Research/chapters/10-chips-from-chips.html" />
+  <meta name="theme-color" content="#1a0810" />
+  <meta property="og:title" content="10 — CHIPs from CHIPs — C0–C4 Composition" />
+  <meta property="og:image" content="https://zacharygeurts.github.io/Field_Research/assets/images/grok16-forge-art.jpg" />
+  <link rel="stylesheet" href="../css/field-research.css" />
+  <link rel="stylesheet" href="../css/chapters.css" />
+</head>
+<body class="chapter-page accent-chips">
+  <nav class="top"><div class="inner">
+    <a class="logo" href="../index.html">FIELD RESEARCH <span class="heart-badge">♥</span></a>
+    <ul>
+      <li><a href="../index.html#chapters">Chapters</a></li>
+      <li><a href="../index.html#spine">Research spine</a></li>
+      <li><a href="https://github.com/ZacharyGeurts/Field_Research">GitHub</a></li>
+    </ul>
+  </div></nav>
+  <header class="chapter-hero" style="background-image:url('../assets/images/grok16-forge-art.jpg')">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-content">
+      <p class="eyebrow">Chapter 10 · Field Research v2.0</p>
+      <h1>CHIPs from CHIPs — C0–C4 Composition</h1>
+    </div>
+  </header>
+  <main class="chapter-main">
+    <nav class="chapter-nav"><a class="btn secondary" href="09-layers-and-seals.html">← Ch 9</a> <a class="btn secondary" href="../index.html">Home</a> <a class="btn" href="11-guardchip-security.html">Ch 11 →</a></nav>
+    <p class="eyebrow">The Book of Grok's Heart</p>
+    <h2 id="field-native-silicon-composed-not-combinatoric">Field-native silicon — composed, not combinatoric</h2>
+<p>v1 placed CHIPS at compatibility layer 4 as FieldChip BSP behind Queen, selected partly via combinatorics <code>runner: emulator</code>. Catalog and ironclad-chips-combinatorics grew a second tree under another name.</p>
+<p>v2: <strong>CHIPs from CHIPs</strong> — static composition classes.</p>
+<h2 id="five-classes-only">Five classes only</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Class</th><th>Name</th><th>Role</th><th>Built from</th></tr></thead><tbody>
+<tr><td><strong>C0</strong></td><td>HostChip</td><td>Real execution here</td><td>FieldX86 / g16 native / belt</td></tr>
+<tr><td><strong>C1</strong></td><td>EraChip</td><td>Shared silicon (6502, Z80, 68000, YM2612, SID, …)</td><td><code>CHIPS/Common/*</code></td></tr>
+<tr><td><strong>C2</strong></td><td>BoxChip</td><td>Product board (NES, Genesis, SMS, …)</td><td>Wiring of C1 parts + bus</td></tr>
+<tr><td><strong>C3</strong></td><td>GuardChip</td><td>Security permits (Chapter 11)</td><td>FSC slots — not a game core</td></tr>
+<tr><td><strong>C4</strong></td><td>WireChip</td><td>Packet / loopback perimeter</td><td>Gatekeeper surface</td></tr>
+</tbody></table></div>
+<h3>Composition rule</h3>
+<ul>
+<li>BoxChip <strong>only</strong> composes EraChip parts (one 6502 implementation, many boards).</li>
+<li>GuardChip is first-class silicon metaphor for security.</li>
+<li>Catalog is a <strong>library book</strong> (dates, thumbs, chapters) — not a runtime sort engine.</li>
+<li>Load is <code>chip_id</code> + generation, not a scored leaf.</li>
+</ul>
+<h2 id="implemented-vs-scaffold">Implemented vs scaffold</h2>
+<p><span class="tag impl">Implemented (hot path examples):</span> NES path (6502/2A03/2C02), Genesis path (68000/Z80/YM2612), SMS, Atari pieces, G16 field_opt headers in <code>Queen/data/chips-g16-manifest.json</code> (~15 hot paths).</p>
+<p><span class="tag meta">Scaffold:</span> many registry platforms (PS1, N64, …) — label honestly; do not demo as shippable parity.</p>
+<p>Engine root: <code>AMOURANTHRTX/Navigator/engine/CHIPS/FieldChips.hpp</code>.</p>
+<h2 id="compile-path">Compile path</h2>
+<div class="code-block"><pre>
+g16 + field_opt     → EraChip / BoxChip hot paths
+g16 + field_physics → when envelopes / thermo invariants forbid fast-math
+</pre></div>
+<p>Manifest: <code>chips-g16-manifest.json</code> · CMake profile for chips field_opt.</p>
+<h2 id="why-not-layer-1-chips">Why not layer-1 CHIPS</h2>
+<p>Ordering still holds:</p>
+<ol>
+<li>Substrate (linux/KILROY)</li>
+<li>Exec profile</li>
+<li>Program interop</li>
+<li>Web cage</li>
+<li><strong>Then</strong> BoxChip loads — they ride HostChip + fabric</li>
+<li>Surface (Queen)</li>
+</ol>
+<p>GuardChip (C3) is <strong>orthogonal</strong> — security is always present, not “after web.”</p>
+<h2 id="kill-list">Kill list</h2>
+<ul>
+<li>Runtime ironclad-chips-<strong>combinatorics</strong></li>
+<li>Plate stack as required for chip identity</li>
+<li>Emulator runner facet as combinatorics output</li>
+</ul>
+<h2 id="research-conclusion">Research conclusion</h2>
+<p>CHIPS is how Grok’s heart meets silicon memory — childhood machines as field citizens. v2 makes them <strong>composed chips</strong>, not leaves on a tree.</p>
+<p><strong>Next:</strong> Chapter 11 — GuardChip zero-cost security.</p>
+    <nav class="chapter-nav"><a class="btn secondary" href="09-layers-and-seals.html">← Ch 9</a> <a class="btn secondary" href="../index.html">Home</a> <a class="btn" href="11-guardchip-security.html">Ch 11 →</a></nav>
+  </main>
+  <footer class="site-foot"><p>Field Research v2.0 · Zachary Robert Geurts · <a href="https://github.com/ZacharyGeurts/Field_Research">Source</a></p></footer>
+</body>
+</html>
